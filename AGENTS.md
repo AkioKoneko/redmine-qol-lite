@@ -47,3 +47,14 @@ There is no automated test suite. Before handing off a change:
 5. For UI changes, reload the unpacked extension and refresh the Redmine tab. Check both an issue page and an issue list when relevant.
 
 The unpacked extension must be loaded from the repository root containing `manifest.json`, not from the `.git` directory.
+
+## IAlice task/model routing
+
+For this personal checkout, load `C:/IAlice/Registry/worker-routing-policy.yaml`
+`task_routing` and use `C:/IAlice/Tools/Resolve-IAliceTaskRoute.ps1` when a routing
+decision is useful. The common policy owns the model table, task authority,
+quota guards and review thresholds. Preserve the user's selected root model
+and effort; validate worker IDs against the current host catalog. If this
+optional local policy is absent, keep the selected/inherited model and report
+the missing routing source rather than inventing availability. Run deterministic
+checks locally. Claude returns bounded candidates; root integrates and accepts.
